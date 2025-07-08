@@ -134,9 +134,8 @@ export default function LoginPage() {
   setIsLoading(true);
   setErrors([]);
 
-  try {
-    // Call your backend API route
-    const res = await fetch("/app/auth/login", {
+    try {
+    const res = await fetch("/api/login", { // ✅ FIXED PATH
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
